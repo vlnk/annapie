@@ -1,0 +1,25 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+      {
+          "type": "chrome",
+          "request": "attach",
+          "name": "attach into chromium",
+          "port": 9222,
+          "webRoot": "${workspace:annapie}"
+      },
+      {
+          "type": "chrome",
+          "request": "launch",
+          "name": "debug into chromium",
+          "url": "http://localhost:8080",
+          "webRoot": "${workspaceFolder:annapie}",
+          "linux": {
+              "runtimeExecutable": "/usr/bin/chromium-browser",
+              "runtimeArgs": [
+                  "--remote-debuging-port=9222"
+              ]
+          }
+      }
+  ]
+}

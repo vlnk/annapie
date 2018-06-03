@@ -13,7 +13,7 @@ module.exports = {
       use: ['style-loader', 'css-loader', 'sass-loader']
     }, {
       test: /\.css$/,
-      use: 'css-loader'
+      use: ['style-loader', 'css-loader']
     }, {
       test: /\.jsx?$/,
       exclude: /(node_modules|config)/,
