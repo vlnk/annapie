@@ -12,10 +12,11 @@ module.exports = merge(common, {
     contentBase: '../build',
     hot: true
   },
+  entry: ['babel-polyfill', './src/app.js'],
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
-      template: 'src/index.html',
+      template: './src/app.html',
       title: 'Annapie'
     })
   ]

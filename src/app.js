@@ -8,11 +8,14 @@ import Sortable from 'vue-sortable'
 
 import App from '~/containers/App.vue'
 
+import store from '~/store'
+
 Vue.use(VueMaterial)
 Vue.use(Sortable)
 
 new Vue({ // eslint-disable-line no-new
   el: '#app-container',
+  store,
   components: { App },
   template: '<App />'
 })

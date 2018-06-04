@@ -8,18 +8,18 @@ module.exports = [
     mode: 'development',
     target: 'electron-main',
     entry: {
-      main: './src/main.js'
+      main: './src/window.js'
     }
   }),
   merge(common, {
     mode: 'development',
     target: 'electron-renderer',
     entry: {
-      gui: './src/index.js'
+      gui: './src/app.js'
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: 'src/index.html',
+        template: './src/app.html',
         title: 'Annapie'
       })
     ]

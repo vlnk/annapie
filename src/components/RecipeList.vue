@@ -13,35 +13,21 @@
 
 <script>
   import draggable from 'vuedraggable'
+  import { mapGetters } from 'vuex'
 
   export default {
     components: { draggable },
-    data () {
-      return {
-        recipes : [
-          { id: 1, title: 'Tartiflette' },
-          { id: 2, title: 'Saumon mariné & nouilles sautées' },
-          { id: 3, title: 'Cake Bannane Chocolat' },
-          { id: 4, title: 'Côtelettes de porc avec compote de figues' },
-          { id: 5, title: 'Truite poêlée & salsa aux herbes' },
-          { id: 6, title: 'Salade aux pois chiches buffalo' },
-          { id: 7, title: 'Poulet tandoori aux épices' },
-          { id: 8, title: 'Hamburgers de porc BBQ avec oignons frits' },
-          { id: 9, title: 'Aiglefin avec salsa aux agrumes' }
-        ]
-      }
+    computed: mapGetters({
+      recipes: 'allRecipes'
+    }),
+    created() {
+      this.$store.dispatch('checkoutRecipes')
     }
   }
 </script>
 
 <style lang="scss" scoped>
   $list-width: 320px;
-
-  .full-control {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap-reverse;
-  }
 
   .list {
     width: $list-width;
